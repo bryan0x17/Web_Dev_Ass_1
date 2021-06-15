@@ -9,7 +9,6 @@
     <title>Assignment 1 Part B</title>
 </head>
 <body>
-    <h1>Western Valley Farms</h1>
     <img src="photos/Screenshot (193).png" alt="Western Valley Farms Logo">
     <h2>The Farm where the West meets the Valley</h2>
     <form id="order-form" onsubmit="printOrder(); return false">
@@ -62,15 +61,18 @@
                     <label for="phone">Contact Phone Number</label>
                 </td>
                 <td>
-                    <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="403-555-1010" required>
-                </td>
-                <td>
                     <label for="business">Business</label>
                     <input type="radio" name="phone-type" id="business" value="business">
                     <label for="home">Home</label>
                     <input type="radio" name="phone-type" id="home" value="home" checked>
                 </td>
                 <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="403-555-1010" required>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -106,6 +108,8 @@
                 <td id="veggie_cost">$0</td>
                 <td>
                     <label for="vegQuantity">Quantity (in kg): </label>
+                </td>
+                <td>
                     <input type="number" id="vegQuantity" name="quantity" value="0" onchange="printItemCost('veggie_cost');">
                 </td>
             </tr>
@@ -114,6 +118,8 @@
                 <td id="fruit_cost">$0</td>
                 <td>
                     <label for="fruitQuantity">Quantity (in kg): </label>
+                </td>
+                <td>
                     <input type="number" id="fruitQuantity" name="quantity" value="0" onchange="printItemCost('fruit_cost');">
                 </td>
             </tr>
@@ -122,6 +128,8 @@
                 <td id="chicken_cost">$0</td>
                 <td>
                     <label for="chickenQuantity">Quantity (in kg): </label>
+                </td>
+                <td>
                     <input type="number" id="chickenQuantity" name="quantity" value="0" onchange="printItemCost('chicken_cost');">
                 </td>
             </tr>
@@ -130,6 +138,8 @@
                 <td id="pork_cost">$0</td>
                 <td>
                     <label for="porkQuantity">Quantity (in kg): </label>
+                </td>
+                <td>
                     <input type="number" id="porkQuantity" name="quantity" value="0" onchange="printItemCost('pork_cost');">
                 </td>
             </tr>

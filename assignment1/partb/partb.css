@@ -1,0 +1,98 @@
+/* CSS for Web Dev Assignment 1 - Part B */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Stardos+Stencil:wght@700&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    width: 80%;
+    margin-left: 10%;
+    background-color: rgb(194, 177, 156);
+    
+}
+
+h2 {
+    font-family: 'Stardos Stencil', cursive;
+    font-size: 60px;
+    text-align: center;
+    color: rgb(138, 104, 19);
+}
+
+h3 {
+    font-size: 40px;
+    text-align: center;
+    border-bottom: dashed;
+}
+
+h4 {
+    text-decoration: underline;
+    font-size: 25px;
+    margin-left: 5%;
+}
+
+#menu {
+    border: black;
+    border-style: groove;
+    padding: 5%;
+    background-color: rgb(230, 200, 166);
+}
+
+img {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 50px;
+}
+
+#information td {
+    width: 250px;
+}
+
+#menuItems {
+    margin-bottom: 50px;
+}
+
+#menuItems td {
+    width: 200px;
+}
+
+input {
+    width: 200px;
+}
+
+[type='radio'] {
+    width: auto;
+}
+
+#orderConfirmation td {
+    width: auto;
+}
+
+#orderConfirmation table {
+    margin-bottom: 30px;
+}
+
+.button {
+    width: 200px;
+    font-size: 22px;
+    position: relative;
+    left: 35%;
+}
+
+#submit {
+    background-color: rgb(123, 241, 123);
+}
+
+#submit:hover {
+    background-color: green;
+}
+
+#reset {
+    background-color: rgb(238, 119, 119);
+}
+
+#reset:hover {
+    background-color: red;
+}
