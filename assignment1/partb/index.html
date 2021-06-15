@@ -10,6 +10,7 @@
 </head>
 <body>
     <h1>Western Valley Farms</h1>
+    <img src="photos/Screenshot (193).png" alt="Western Valley Farms Logo">
     <h2>The Farm where the West meets the Valley</h2>
     <form id="order-form" onsubmit="printOrder(); return false">
         <div id="menu">
@@ -45,7 +46,7 @@
                     <label for="address">Street Address</label>
                 </td>
                 <td>
-                    <textarea id="address" name="address" pattern="[a-zA-Z-0-9,]+" required ></textarea>
+                    <input type="text" id="address" name="address" pattern="[a-zA-Z-0-9,]+" required ></input>
                 </td>
             </tr>
             <tr>
@@ -53,7 +54,7 @@
                     <label for="post-code">Postal Code</label>
                 </td>
                 <td>
-                    <input type="text" name="post-code" id="post-code" pattern="[A-Z][0-9][A-Z] [A-Z][0-9][A-Z]" required>
+                    <input type="text" name="post-code" id="post-code" pattern="[A-Z][0-9][A-Z] [A-Z][0-9][A-Z]" placeholder="A1A A1A" required>
                 </td>
             </tr>
             <tr>
@@ -61,7 +62,7 @@
                     <label for="phone">Contact Phone Number</label>
                 </td>
                 <td>
-                    <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                    <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="403-555-1010" required>
                 </td>
                 <td>
                     <label for="business">Business</label>
@@ -76,7 +77,7 @@
                     <label for="email">Email Address</label>
                 </td>
                 <td>
-                    <input type="email" id="email" name="email" title="johndoe@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                    <input type="email" id="email" name="email" title="johndoe@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="johndoe@hotmail.com" required>
                 </td>
             </tr>
             <tr>
@@ -85,13 +86,13 @@
                     <label for="pickup">Pickup</label>
                     <input type="radio" name="order-type" id="pickup" value="pickup" checked>
                     <label for="delivery">Delivery</label>
-                    <input type="radio" name="phone-type" id="delivery" value="delivery">
+                    <input type="radio" name="phone-type" id="delivery" value="delivery" onchange="printOrderMethod();">
                 </td>
                 <td></td>
             </tr>
             <tr id="order-method">
                 <td>
-                    <label for="pickup-time" id="order-method-label"></label>
+                    <label for="pickup-time" id="order-method-label">Pickup time and date</label>
                 </td>
                 <td>
                     <input type="datetime-local" name="pickup-time" id="pickup-time" required><!--Not supported on Mozilla-->
@@ -102,121 +103,39 @@
         <table id="menuItems">
             <tr>
                 <td>Vegetable Hamper</td>
-                <td>$12.00</td>
+                <td id="veggie_cost">$0</td>
                 <td>
-                    <label for="marghQuantity">Quantity: </label>
-                    <input type="number" id="marghQuantity" name="quantity" value="0">
+                    <label for="vegQuantity">Quantity (in kg): </label>
+                    <input type="number" id="vegQuantity" name="quantity" value="0" onchange="printItemCost('veggie_cost');">
                 </td>
             </tr>
             <tr>
+                <td>Fruit Hamper</td>
+                <td id="fruit_cost">$0</td>
                 <td>
-                    <figure>
-                        <img src="photos/quattro-formaggi4-qhveli.jpg" alt="Quattro Formaggi pizza">
-                    </figure>
-                </td>
-                <td>Quattro Formaggi</td>
-                <td>$12.50</td>
-                <td>
-                    <label for="quattroQuantity">Quantity: </label>
-                    <input type="number" id="quattroQuantity" name="quantity" value="0">
+                    <label for="fruitQuantity">Quantity (in kg): </label>
+                    <input type="number" id="fruitQuantity" name="quantity" value="0" onchange="printItemCost('fruit_cost');">
                 </td>
             </tr>
             <tr>
+                <td>Fresh Chicken</td>
+                <td id="chicken_cost">$0</td>
                 <td>
-                    <figure>
-                        <img src="photos/capri.jpg" alt="Capricciosa pizza">
-                    </figure>
-                </td>
-                <td>Capricciosa</td>
-                <td>$13.00</td>
-                <td>
-                    <label for="capriQuantity">Quantity: </label>
-                    <input type="number" id="capriQuantity" name="quantity" value="0">
-                </td>
-            </tr>
-        </table>
-        <h5>Sandwiches</h5>
-        <table>
-            <tr>
-                <td>
-                    <figure>
-                        <img src="photos/schnitz.jpeg" alt="Schnitzel sandwich">
-                    </figure>
-                </td>
-                <td>Schnitzel</td>
-                <td>$8.50</td>
-                <td>
-                    <label for="schnitzQuantity">Quantity: </label>
-                    <input type="number" id="schnitzQuantity" name="quantity" value="0">
+                    <label for="chickenQuantity">Quantity (in kg): </label>
+                    <input type="number" id="chickenQuantity" name="quantity" value="0" onchange="printItemCost('chicken_cost');">
                 </td>
             </tr>
             <tr>
+                <td>Pork</td>
+                <td id="pork_cost">$0</td>
                 <td>
-                    <figure>
-                        <img src="photos/mixed_grill.jpg" alt="Mixed Grill sandwich">
-                    </figure>
-                </td>
-                <td>Mixed Grill</td>
-                <td>$9.50</td>
-                <td>
-                    <label for="grillQuantity">Quantity: </label>
-                    <input type="number" id="grillQuantity" name="quantity" value="0">
+                    <label for="porkQuantity">Quantity (in kg): </label>
+                    <input type="number" id="porkQuantity" name="quantity" value="0" onchange="printItemCost('pork_cost');">
                 </td>
             </tr>
             <tr>
-                <td>
-                    <figure>
-                        <img src="photos/big_beef.jpg" alt="Big Beef sandwich">
-                    </figure>
-                </td>
-                <td>Big Beef on a Bun</td>
-                <td>$10.00</td>
-                <td>
-                    <label for="beefQuantity">Quantity: </label>
-                    <input type="number" id="beefQuantity" name="quantity" value="0">
-                </td>
-            </tr>
-        </table>
-        <h5>Beverages</h5>
-        <table>
-            <tr>
-                <td>
-                    <figure>
-                        <img src="photos/coffee.jpg" alt="Coffee">
-                    </figure>
-                </td>
-                <td>Coffee</td>
-                <td>$2.00</td>
-                <td>
-                    <label for="coffeeQuantity">Quantity: </label>
-                    <input type="number" id="coffeeQuantity" name="quantity" value="0">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <figure>
-                        <img src="photos/latte.jpg" alt="Latte">
-                    </figure>
-                </td>
-                <td>Latte</td>
-                <td>$2.50</td>
-                <td>
-                    <label for="latteQuantity">Quantity: </label>
-                    <input type="number" id="latteQuantity" name="quantity" value="0">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <figure>
-                        <img src="photos/soda.jpg" alt="Sodas">
-                    </figure>
-                </td>
-                <td>Soft drink</td>
-                <td>$1.75</td>
-                <td>
-                    <label for="sodaQuantity">Quantity: </label>
-                    <input type="number" id="sodaQuantity" name="quantity" value="0">
-                </td>
+                <td>Total Cost</td>
+                <td id="total_cost">$0</td>
             </tr>
         </table>
         <input type="submit" value="Submit Order" class="button" id="submit">
