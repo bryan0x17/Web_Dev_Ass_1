@@ -45,7 +45,7 @@
                     <label for="address">Street Address</label>
                 </td>
                 <td>
-                    <input type="text" id="address" name="address" pattern="[a-zA-Z-0-9,]+" required ></input>
+                    <input type="text" id="address" name="address" required ></input>
                 </td>
             </tr>
             <tr>
@@ -88,7 +88,7 @@
                     <label for="pickup">Pickup</label>
                     <input type="radio" name="order-type" id="pickup" value="pickup" checked>
                     <label for="delivery">Delivery</label>
-                    <input type="radio" name="phone-type" id="delivery" value="delivery" onchange="printOrderMethod();">
+                    <input type="radio" name="order-type" id="delivery" value="delivery" onchange="printOrderMethod();">
                 </td>
                 <td></td>
             </tr>
@@ -110,7 +110,7 @@
                     <label for="vegQuantity">Quantity (in kg): </label>
                 </td>
                 <td>
-                    <input type="number" id="vegQuantity" name="quantity" value="0" onchange="printItemCost('veggie_cost');">
+                    <input type="number" id="vegQuantity" name="quantity" value="0" min="0" onchange="printItemCost('veggie_cost');">
                 </td>
             </tr>
             <tr>
@@ -120,7 +120,7 @@
                     <label for="fruitQuantity">Quantity (in kg): </label>
                 </td>
                 <td>
-                    <input type="number" id="fruitQuantity" name="quantity" value="0" onchange="printItemCost('fruit_cost');">
+                    <input type="number" id="fruitQuantity" name="quantity" value="0" min="0" onchange="printItemCost('fruit_cost');">
                 </td>
             </tr>
             <tr>
@@ -130,7 +130,7 @@
                     <label for="chickenQuantity">Quantity (in kg): </label>
                 </td>
                 <td>
-                    <input type="number" id="chickenQuantity" name="quantity" value="0" onchange="printItemCost('chicken_cost');">
+                    <input type="number" id="chickenQuantity" name="quantity" min="0" value="0" onchange="printItemCost('chicken_cost');">
                 </td>
             </tr>
             <tr>
@@ -140,7 +140,7 @@
                     <label for="porkQuantity">Quantity (in kg): </label>
                 </td>
                 <td>
-                    <input type="number" id="porkQuantity" name="quantity" value="0" onchange="printItemCost('pork_cost');">
+                    <input type="number" id="porkQuantity" name="quantity" min="0" value="0" onchange="printItemCost('pork_cost');">
                 </td>
             </tr>
             <tr>
