@@ -1,0 +1,77 @@
+/*Stylesheet for assignment 1 Part A*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Playfair+Display&display=swap');
+
+body {
+    font-family: 'Cabin', sans-serif;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 22px;
+}
+
+body::after {
+	background-image: url("photos/dan-burton-0MaCDpIs6oc-unsplash.jpg"); /*Source: https://unsplash.com/photos/0MaCDpIs6oc */
+	background-size: cover;
+    background-attachment: fixed;
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	opacity: 0.3;
+	z-index: -1;
+    
+
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    text-align: center;
+}
+
+.subtitle {
+    font-style: italic;
+    font-size: 18px;
+}
+
+figure {
+    width: 400px;
+    height: auto;
+}
+
+figure.left {
+    float: left;
+}
+
+figure.right {
+    float: right;
+}
+
+figcaption {
+    word-wrap: normal;
+}
+
+img {
+    width: 400px;
+    height: auto;
+    transition: transform 2s;   
+}
+
+img:hover {
+    transform: scale(150%);
+}
+
+p::first-letter {
+    font-weight: bolder;
+    font-size: 25px;
+}
+
