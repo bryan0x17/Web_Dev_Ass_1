@@ -14,13 +14,13 @@ body::after {
 	background-image: url("photos/dan-burton-0MaCDpIs6oc-unsplash.jpg"); /*Source: https://unsplash.com/photos/0MaCDpIs6oc */
 	background-size: cover;
     background-attachment: fixed;
-	position: absolute;
+	position: fixed;
 	content: "";
 	top: 0;
 	left: 0;
 	bottom: 0;
 	right: 0;
-	opacity: 0.3;
+	opacity: 0.1;
 	z-index: -1;
     
 
@@ -43,7 +43,7 @@ body::after {
     text-align: center;
     text-decoration: none;
     color: whitesmoke;
-    background-color: rgb(212, 211, 211);
+    background-color: rgb(173, 172, 172);
 }
 
 .navbar a:visited {
